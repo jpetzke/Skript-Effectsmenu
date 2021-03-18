@@ -1,0 +1,543 @@
+on join:
+    set {_u} to uuid of player
+    #effects
+    remove jump boost from player
+    set {effects::%{_u}%::jumpboost} to 0
+    remove speed from player
+    set {effects::%{_u}%::speed} to 0
+    remove glowing from player
+    set {effects::%{_u}%::visual} to 0
+
+    #chatcolor
+    set {chatcolor::%{_p}%} to "&7"
+
+function effectsmenu(p: player, category: string, option: string, value: integer):
+    set {_u} to uuid of {_p}
+    if {_category} is "effects":
+        if {_option} is "jumpboost":
+            if {_value} is 0:
+                remove jump boost from {_p}
+                format gui slot 12 of {_p} with glowing barrier named "&cNo effect" with lore "&7Click here to reset the Jump Boost effect" to run function effectsmenu({_p}, "effects", "jumpboost", 0)
+                format gui slot 13 of {_p} with slime ball named "&aJump boost 1" with lore "&7Click here to get the Jump Boost 1 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 1)
+                format gui slot 14 of {_p} with slime block named "&6Jump boost 2" with lore "&7Click here to get the Jump Boost 2 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 2)
+                format gui slot 15 of {_p} with piston named "&4Jump boost 3" with lore "&7Click here to get the Jump Boost 3 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 3)
+                format gui slot 16 of {_p} with sticky piston named "&4Jump boost 4" with lore "&7Click here to get the Jump Boost 4 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 4)
+
+                set {effects::%{_u}%::jumpboost} to 0
+
+            else if {_value} is 1:
+                remove jump boost from {_p}
+                wait 1 tick
+                apply jump boost 1 without particles to {_p} for 99999 seconds
+                format gui slot 12 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Jump Boost effect" to run function effectsmenu({_p}, "effects", "jumpboost", 0)
+                format gui slot 13 of {_p} with glowing slime ball named "&aJump boost 1" with lore "&7Click here to get the Jump Boost 1 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 1)
+                format gui slot 14 of {_p} with slime block named "&6Jump boost 2" with lore "&7Click here to get the Jump Boost 2 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 2)
+                format gui slot 15 of {_p} with piston named "&4Jump boost 3" with lore "&7Click here to get the Jump Boost 3 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 3)
+                format gui slot 16 of {_p} with sticky piston named "&4Jump boost 4" with lore "&7Click here to get the Jump Boost 4 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 4)
+
+                set {effects::%{_u}%::jumpboost} to 1
+
+            else if {_value} is 2:
+                remove jump boost from {_p}
+                wait 1 tick
+                apply jump boost 2 without particles to {_p} for 99999 seconds
+                format gui slot 12 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Jump Boost effect" to run function effectsmenu({_p}, "effects", "jumpboost", 0)
+                format gui slot 13 of {_p} with slime ball named "&aJump boost 1" with lore "&7Click here to get the Jump Boost 1 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 1)
+                format gui slot 14 of {_p} with glowing slime block named "&6Jump boost 2" with lore "&7Click here to get the Jump Boost 2 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 2)
+                format gui slot 15 of {_p} with piston named "&4Jump boost 3" with lore "&7Click here to get the Jump Boost 3 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 3)
+                format gui slot 16 of {_p} with sticky piston named "&4Jump boost 4" with lore "&7Click here to get the Jump Boost 4 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 4)
+
+                set {effects::%{_u}%::jumpboost} to 2
+
+            else if {_value} is 3:
+                remove jump boost from {_p}
+                wait 1 tick
+                apply jump boost 3 without particles to {_p} for 99999 seconds
+                format gui slot 12 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Jump Boost effect" to run function effectsmenu({_p}, "effects", "jumpboost", 0)
+                format gui slot 13 of {_p} with slime ball named "&aJump boost 1" with lore "&7Click here to get the Jump Boost 1 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 1)
+                format gui slot 14 of {_p} with slime block named "&6Jump boost 2" with lore "&7Click here to get the Jump Boost 2 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 2)
+                format gui slot 15 of {_p} with glowing piston named "&4Jump boost 3" with lore "&7Click here to get the Jump Boost 3 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 3)
+                format gui slot 16 of {_p} with sticky piston named "&4Jump boost 4" with lore "&7Click here to get the Jump Boost 4 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 4)
+
+                set {effects::%{_u}%::jumpboost} to 3
+                
+            else if {_value} is 4:
+                remove jump boost from {_p}
+                wait 1 tick
+                apply jump boost 4 without particles to {_p} for 99999 seconds
+                format gui slot 12 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Jump Boost effect" to run function effectsmenu({_p}, "effects", "jumpboost", 0)
+                format gui slot 13 of {_p} with slime ball named "&aJump boost 1" with lore "&7Click here to get the Jump Boost 1 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 1)
+                format gui slot 14 of {_p} with slime block named "&6Jump boost 2" with lore "&7Click here to get the Jump Boost 2 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 2)
+                format gui slot 15 of {_p} with piston named "&4Jump boost 3" with lore "&7Click here to get the Jump Boost 3 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 3)
+                format gui slot 16 of {_p} with glowing sticky piston named "&4Jump boost 4" with lore "&7Click here to get the Jump Boost 4 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 4)
+
+                set {effects::%{_u}%::jumpboost} to 4
+
+        else if {_option} is "speed":
+            if {_value} is 0:
+                remove speed from {_p}
+                format gui slot 21 of {_p} with glowing barrier named "&cNo effect" with lore "&7Click here to reset the Speed Boost effect" to run function effectsmenu({_p}, "effects", "speed", 0)
+                format gui slot 22 of {_p} with feather named "&aSpeed 1" with lore "&7Click here to get the Speed Boost 1 effect" to run function effectsmenu({_p}, "effects", "speed", 1)
+                format gui slot 23 of {_p} with gold boots named "&6Speed 2" with lore "&7Click here to get the Speed Boost 2 effect" to run function effectsmenu({_p}, "effects", "speed", 2)
+                format gui slot 24 of {_p} with diamond boots named "&4Speed 3" with lore "&7Click here to get the Speed Boost 3 effect" to run function effectsmenu({_p}, "effects", "speed", 3)
+                format gui slot 25 of {_p} with netherite boots named "&4Speed 4" with lore "&7Click here to get the Speed Boost 4 effect" to run function effectsmenu({_p}, "effects", "speed", 4)  
+                set {effects::%{_u}%::speed} to 0
+
+            else if {_value} is 1:
+                remove speed from {_p}
+                format gui slot 21 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Speed Boost effect" to run function effectsmenu({_p}, "effects", "speed", 0)
+                format gui slot 22 of {_p} with glowing feather named "&aSpeed 1" with lore "&7Click here to get the Speed Boost 1 effect" to run function effectsmenu({_p}, "effects", "speed", 1)
+                format gui slot 23 of {_p} with gold boots named "&6Speed 2" with lore "&7Click here to get the Speed Boost 2 effect" to run function effectsmenu({_p}, "effects", "speed", 2)
+                format gui slot 24 of {_p} with diamond boots named "&4Speed 3" with lore "&7Click here to get the Speed Boost 3 effect" to run function effectsmenu({_p}, "effects", "speed", 3)
+                format gui slot 25 of {_p} with netherite boots named "&4Speed 4" with lore "&7Click here to get the Speed Boost 4 effect" to run function effectsmenu({_p}, "effects", "speed", 4)  
+                apply speed 1 without particles to {_p} for 99999 seconds
+                set {effects::%{_u}%::speed} to 1
+
+            else if {_value} is 2:
+                remove speed from {_p}
+                format gui slot 21 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Speed Boost effect" to run function effectsmenu({_p}, "effects", "speed", 0)
+                format gui slot 22 of {_p} with feather named "&aSpeed 1" with lore "&7Click here to get the Speed Boost 1 effect" to run function effectsmenu({_p}, "effects", "speed", 1)
+                format gui slot 23 of {_p} with glowing gold boots named "&6Speed 2" with lore "&7Click here to get the Speed Boost 2 effect" to run function effectsmenu({_p}, "effects", "speed", 2)
+                format gui slot 24 of {_p} with diamond boots named "&4Speed 3" with lore "&7Click here to get the Speed Boost 3 effect" to run function effectsmenu({_p}, "effects", "speed", 3)
+                format gui slot 25 of {_p} with netherite boots named "&4Speed 4" with lore "&7Click here to get the Speed Boost 4 effect" to run function effectsmenu({_p}, "effects", "speed", 4)  
+                apply speed 2 without particles to {_p} for 99999 seconds
+                set {effects::%{_u}%::speed} to 2
+
+            else if {_value} is 3:
+                remove speed from {_p}
+                format gui slot 21 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Speed Boost effect" to run function effectsmenu({_p}, "effects", "speed", 0)
+                format gui slot 22 of {_p} with feather named "&aSpeed 1" with lore "&7Click here to get the Speed Boost 1 effect" to run function effectsmenu({_p}, "effects", "speed", 1)
+                format gui slot 23 of {_p} with gold boots named "&6Speed 2" with lore "&7Click here to get the Speed Boost 2 effect" to run function effectsmenu({_p}, "effects", "speed", 2)
+                format gui slot 24 of {_p} with glowing diamond boots named "&4Speed 3" with lore "&7Click here to get the Speed Boost 3 effect" to run function effectsmenu({_p}, "effects", "speed", 3)
+                format gui slot 25 of {_p} with netherite boots named "&4Speed 4" with lore "&7Click here to get the Speed Boost 4 effect" to run function effectsmenu({_p}, "effects", "speed", 4)            
+                apply speed 3 without particles to {_p} for 99999 seconds
+                set {effects::%{_u}%::speed} to 3
+
+            else if {_value} is 4:
+                remove speed from {_p}
+                format gui slot 21 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Speed Boost effect" to run function effectsmenu({_p}, "effects", "speed", 0)
+                format gui slot 22 of {_p} with feather named "&aSpeed 1" with lore "&7Click here to get the Speed Boost 1 effect" to run function effectsmenu({_p}, "effects", "speed", 1)
+                format gui slot 23 of {_p} with gold boots named "&6Speed 2" with lore "&7Click here to get the Speed Boost 2 effect" to run function effectsmenu({_p}, "effects", "speed", 2)
+                format gui slot 24 of {_p} with diamond boots named "&4Speed 3" with lore "&7Click here to get the Speed Boost 3 effect" to run function effectsmenu({_p}, "effects", "speed", 3)
+                format gui slot 25 of {_p} with glowing netherite boots named "&4Speed 4" with lore "&7Click here to get the Speed Boost 4 effect" to run function effectsmenu({_p}, "effects", "speed", 4)            
+                apply speed 4 without particles to {_p} for 99999 seconds
+                set {effects::%{_u}%::speed} to 4
+            
+        else if {_option} is "visual":
+            if {_value} is 0:
+                remove glowing from {_p}
+                format gui slot 30 of {_p} with glowing barrier named "&cNo effect" with lore "&7Click here to reset the Visual effects" to run function effectsmenu({_p}, "effects", "visual", 0)
+                format gui slot 31 of {_p} with glowstone dust named "&aGlowing" with lore "&7Click here to get the Glowing effect" to run function effectsmenu({_p}, "effects", "visual", 1)         
+                set {effects::%{_u}%::visual} to 0
+
+            else if {_value} is 1:
+                format gui slot 30 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Visual effects" to run function effectsmenu({_p}, "effects", "visual", 0)
+                format gui slot 31 of {_p} with glowing glowstone dust named "&aGlowing" with lore "&7Click here to get the Glowing effect" to run function effectsmenu({_p}, "effects", "visual", 1) 
+                apply glowing without particles to {_p} for 99999 seconds       
+                set {effects::%{_u}%::visual} to 1
+
+# ---
+    else if {_category} is "load":
+        if {_option} is "main":
+            close inventory of {_p}
+            open virtual chest inventory with 3 rows named "effects Menu" to {_p}
+            wait 1 tick
+            format gui slot (integers between 0 and 26) of {_p} with gray stained glass pane named " " to do nothing
+            wait 1 tick
+            format gui slot 11 of {_p} with water bottle named "&bEffects" to run:
+                #open effect gui
+                # effects: 
+                #  -  jump boost
+                #  -  speed
+                #  -  glowing
+                close inventory of {_p}
+                open virtual chest inventory with 5 rows named "Effects" to {_p}
+
+                format gui slot (integers between 0 and 44) of {_p} with gray stained glass pane named " " to do nothing
+    
+                format gui slot 10 of {_p} with potion of leaping named "&aJump boost" to do nothing
+                    # jump boost sub-sub-gui
+
+                format gui slot 12 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Jump Boost effect" to run function effectsmenu({_p}, "effects", "jumpboost", 0)
+                format gui slot 13 of {_p} with slime ball named "&aJump boost 1" with lore "&7Click here to get the Jump Boost 1 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 1)
+                format gui slot 14 of {_p} with slime block named "&6Jump boost 2" with lore "&7Click here to get the Jump Boost 2 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 2)
+                format gui slot 15 of {_p} with piston named "&4Jump boost 3" with lore "&7Click here to get the Jump Boost 3 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 3)
+                format gui slot 16 of {_p} with sticky piston named "&4Jump boost 4" with lore "&7Click here to get the Jump Boost 3 effect" to run function effectsmenu({_p}, "effects", "jumpboost", 4)
+
+                effectsmenu({_p}, "effects", "jumpboost", {effects::%{_u}%::jumpboost})
+    
+                format gui slot 19 of {_p} with feather named "&aSpeed" to do nothing
+                        # speed sub-sub-gui
+                format gui slot 21 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Speed Boost effect" to run function effectsmenu({_p}, "effects", "speed", 0)
+                format gui slot 22 of {_p} with leather boots named "&aSpeed 1" with lore "&7Click here to get the Speed Boost 1 effect" to run function effectsmenu({_p}, "effects", "speed", 1)
+                format gui slot 23 of {_p} with gold boots named "&6Speed 2" with lore "&7Click here to get the Speed Boost 2 effect" to run function effectsmenu({_p}, "effects", "speed", 2)
+                format gui slot 24 of {_p} with diamond boots named "&4Speed 3" with lore "&7Click here to get the Speed Boost 3 effect" to run function effectsmenu({_p}, "effects", "speed", 3)
+                format gui slot 25 of {_p} with netherite boots named "&4Speed 4" with lore "&7Click here to get the Speed Boost 4 effect" to run function effectsmenu({_p}, "effects", "speed", 4)
+
+                effectsmenu({_p}, "effects", "speed", {effects::%{_u}%::speed})
+
+                format gui slot 28 of {_p} with glowstone named "&aVisibility" to do nothing
+                    # glowing sub-sub-gui
+                format gui slot 30 of {_p} with barrier named "&cNo effect" with lore "&7Click here to reset the Visual effects" to run function effectsmenu({_p}, "effects", "visual", 0)
+                format gui slot 31 of {_p} with glowstone dust named "&aGlowing" with lore "&7Click here to get the Glowing effect" to run function effectsmenu({_p}, "effects", "visual", 1)
+
+                effectsmenu({_p}, "effects", "visual", {effects::%{_u}%::visual})
+
+                #exit
+                format gui slot 44 of {_p} with arrow named "&cBack" to run function effectsmenu({_p}, "load", "main", 0)
+    
+        format gui slot 13 of {_p} with paper named "&bChatcolor" to run:
+            close inventory of {_p}
+            open virtual chest inventory with 4 rows named "Chatcolor" to {_p}
+
+            format gui slot (integers between 0 and 35) of {_p} with gray stained glass pane named " " to do nothing
+
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+
+            effectsmenu({_p}, "chatcolor", {chatcolor::%{_p}%}, 0)
+
+            #exit
+            format gui slot 35 of {_p} with arrow named "&cBack" to run function effectsmenu({_p}, "load", "main", 0)
+
+    
+        format gui slot 15 of {_p} with nametag named "&bNamecolors" to run:
+            close inventory of {_p}
+            open virtual chest inventory with 4 rows named "Namecolor" to {_p}
+            format gui slot (integers between 0 and 35) of {_p} with gray stained glass pane named " " to do nothing
+
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+
+            effectsmenu({_p}, "namecolor", {namecolor::%{_p}%}, 0)
+
+            #exit
+            format gui slot 35 of {_p} with arrow named "&cBack" to run function effectsmenu({_p}, "load", "main", 0)
+# ---
+    else if {_category} is "chatcolor":
+        if {_option} is "&a":
+                
+            set {chatcolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with glowing lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+
+        else if {_option} is "&b":
+                
+            set {chatcolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with glowing light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+            
+        else if {_option} is "&3":
+                
+            set {chatcolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with glowing cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+            
+        else if {_option} is "&e":
+                
+            set {chatcolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with glowing yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+
+        else if {_option} is "&6":
+                
+            set {chatcolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with glowing orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+
+        else if {_option} is "&c":
+                
+            set {chatcolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+            format gui slot 20 of {_p} with glowing red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+
+        else if {_option} is "&5":
+                
+            set {chatcolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with glowing purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+
+        else if {_option} is "&d":
+                
+            set {chatcolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with glowing pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+
+        else if {_option} is "&f":
+                
+            set {chatcolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with glowing white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+
+        else if {_option} is "&7":
+                
+            set {chatcolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "chatcolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "chatcolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "chatcolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "chatcolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "chatcolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "chatcolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "chatcolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "chatcolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "chatcolor", "&f", 0)
+            format gui slot 24 of {_p} with glowing gray dye named "&8Gray" to run function effectsmenu({_p}, "chatcolor", "&7", 0)
+        
+# ---
+    else if {_category} is "namecolor":
+        if {_option} is "&a":
+                
+            set {namecolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with glowing lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+            set {_p}'s displayname to "&a%{_p}%"
+            set {_p}'s tablistname to "&a%{_p}%"
+
+        else if {_option} is "&b":
+                
+            set {namecolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with glowing light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+            set {_p}'s displayname to "&b%{_p}%"
+            set {_p}'s tablistname to "&b%{_p}%"
+
+        else if {_option} is "&3":
+                
+            set {namecolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with glowing cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+            set {_p}'s displayname to "&3%{_p}%"
+            set {_p}'s tablistname to "&3%{_p}%"
+
+        else if {_option} is "&e":
+                
+            set {namecolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with glowing yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+            set {_p}'s displayname to "&e%{_p}%"
+            set {_p}'s tablistname to "&e%{_p}%"
+
+        else if {_option} is "&6":
+                
+            set {namecolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with glowing orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+            set {_p}'s displayname to "&6%{_p}%"
+            set {_p}'s tablistname to "&6%{_p}%"
+
+        else if {_option} is "&c":
+                
+            set {namecolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+            format gui slot 20 of {_p} with glowing red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+            set {_p}'s displayname to "&c%{_p}%"
+            set {_p}'s tablistname to "&c%{_p}%"
+
+        else if {_option} is "&5":
+                
+            set {namecolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with glowing purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+            set {_p}'s displayname to "&5%{_p}%"
+            set {_p}'s tablistname to "&5%{_p}%"
+
+        else if {_option} is "&d":
+                
+            set {namecolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with glowing pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+            set {_p}'s displayname to "&d%{_p}%"
+            set {_p}'s tablistname to "&d%{_p}%"
+
+        else if {_option} is "&f":
+                
+            set {namecolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with glowing white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+            set {_p}'s displayname to "&f%{_p}%"
+            set {_p}'s tablistname to "&f%{_p}%"
+
+        else if {_option} is "&7":
+                
+            set {namecolor::%{_p}%} to {_option}
+            format gui slot 11 of {_p} with lime dye named "&aGreen" to run function effectsmenu({_p}, "namecolor", "&a", 0)
+            format gui slot 12 of {_p} with  light blue dye named "&bCyan" to run function effectsmenu({_p}, "namecolor", "&b", 0)
+            format gui slot 13 of {_p} with cyan dye named "&3Dark Cyan" to run function effectsmenu({_p}, "namecolor", "&3", 0)
+            format gui slot 14 of {_p} with yellow dye named "&eYellow" to run function effectsmenu({_p}, "namecolor", "&e", 0)
+            format gui slot 15 of {_p} with orange dye named "&6Orange" to run function effectsmenu({_p}, "namecolor", "&6", 0)
+            format gui slot 20 of {_p} with red dye named "&cRed" to run function effectsmenu({_p}, "namecolor", "&c", 0)
+            format gui slot 21 of {_p} with purple dye named "&5Purple" to run function effectsmenu({_p}, "namecolor", "&5", 0)
+            format gui slot 22 of {_p} with pink dye named "&dPink" to run function effectsmenu({_p}, "namecolor", "&d", 0)
+            format gui slot 23 of {_p} with white dye named "&fWhite" to run function effectsmenu({_p}, "namecolor", "&f", 0)
+            format gui slot 24 of {_p} with glowing gray dye named "&8Gray" to run function effectsmenu({_p}, "namecolor", "&7", 0)
+            set {_p}'s displayname to "&7%{_p}%"
+            set {_p}'s tablistname to "&7%{_p}%"
+
+
+# ---
+command /effectsmenu:
+    trigger:
+        set {_u} to uuid of player
+        effectsmenu(player, "load", "main", 0)
